@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blessed Olubiyi — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0d0d0d;
+    --paper: #f5f0e8;
+    --accent: #c0392b;
+    --muted: #6b6560;
+    --rule: #d4cfc7;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+    padding: 60px 24px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Header */
+  header {
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 28px 0 20px;
+    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
+  }
+
+  .name-block h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 7vw, 4.2rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .name-block h1 span {
+    color: var(--accent);
+  }
+
+  .name-block .role {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .contact-block {
+    text-align: right;
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+
+  .contact-block a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact-block a:hover { text-decoration: underline; }
+
+  /* Summary */
+  .summary {
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    margin-bottom: 48px;
+    font-size: 0.78rem;
+    line-height: 1.8;
+    color: #333;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 42px;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+
+  .section-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* Entry */
+  .entry {
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 20px;
+  }
+
+  .entry-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .entry-org {
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .entry-date {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding-top: 4px;
+  }
+
+  .entry-details {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    padding-left: 14px;
+    border-left: 1px solid var(--rule);
+  }
+
+  .entry-details li {
+    font-size: 0.72rem;
+    line-height: 1.8;
+    color: #444;
+    list-style: none;
+    padding: 2px 0;
+  }
+
+  .entry-details li::before {
+    content: '— ';
+    color: var(--accent);
+  }
+
+  /* Skills */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid var(--ink);
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .skill-tag:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .skill-tag.accent {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .skill-tag.accent:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="name-block">
+      <h1>Blessed<br><span>Olubiyi</span></h1>
+      <p class="role">Software Engineering Student &amp; Data Intern</p>
+    </div>
+    <div class="contact-block">
+      <div>Jos, Nigeria</div>
+      <div><a href="tel:+2347010503600">+234 701 050 3600</a></div>
+      <div><a href="mailto:blessedolubiyi40@gmail.com">blessedolubiyi40@gmail.com</a></div>
+      <div><a href="https://www.linkedin.com/in/blessed-olubiyi6706a63aa" target="_blank">LinkedIn</a></div>
+    </div>
+  </header>
+
+  <div class="summary">
+    Driven and innovative individual equipped with exceptional problem-solving abilities and robust analytical skills. 
+    Possesses a solid foundation in coding languages and collaborative teamwork. Eager to contribute to impactful 
+    projects in the Tech space.
+  </div>
+
+  <!-- Experience -->
+  <section>
+    <div class="section-label">Experience</div>
+    <div class="entry">
+      <div>
+        <div class="entry-title">Data Management Intern</div>
+        <div class="entry-org">University of Jos, Nigeria — Student Affairs</div>
+      </div>
+      <div class="entry-date">Aug 2025 – Dec 2025</div>
+      <ul class="entry-details">
+        <li>Collected data with team management</li>
+        <li>Provided efficient methods for data collection and processing</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <div class="section-label">Education</div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">B.Sc. Software Engineering</div>
+        <div class="entry-org">Obafemi Awolowo University</div>
+      </div>
+      <div class="entry-date">Oct 2025 – Present</div>
+      <ul class="entry-details">
+        <li>Distinguished member of the National Association of Computing Students</li>
+        <li>Current GPA: 4.6</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">High School Certificate</div>
+        <div class="entry-org">Baptist High School, Jos</div>
+      </div>
+      <div class="entry-date">Sep 2019 – Aug 2025</div>
+      <ul class="entry-details">
+        <li>6 A1s in WASSCE examinations</li>
+        <li>334 in JAMB UTME</li>
+        <li>Served as a School Prefect</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <span class="skill-tag accent">Python</span>
+      <span class="skill-tag accent">HTML</span>
+      <span class="skill-tag accent">CSS</span>
+      <span class="skill-tag accent">JavaScript</span>
+      <span class="skill-tag accent">Web Development</span>
+      <span class="skill-tag accent">Robotics</span>
+      <span class="skill-tag">Debugging &amp; System Analysis</span>
+      <span class="skill-tag">Teamwork</span>
+      <span class="skill-tag">Communication</span>
+    </div>
+  </section>
+
+  <footer>Curriculum Vitae — Blessed Olubiyi — 2025</footer>
+</div>
+</body>
+</html>
